@@ -30,6 +30,41 @@
             } else {
                 console.error("TPURLC parameter not found in URL.");
                 // You can display an error message or take other action if needed.
+
+
+                //For just redirection following code works:
+// <!--**********************
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Redirect Button</title>
+// </head>
+// <body>
+//     <h1>Redirect Button</h1>
+//     <button id="redirectButton">Redirect</button>
+
+//     <script>
+//         document.getElementById('redirectButton').onclick = function() {
+//             var tpurlcParam = new URLSearchParams(window.location.search).get('TPURLC');
+//             if (tpurlcParam) {
+//                 var redirectUri = decodeURIComponent(tpurlcParam);
+//                 console.log("Redirect URI: " + redirectUri);
+//                 window.location.href = redirectUri;
+//             } else {
+//                 console.error("TPURLC parameter not found in URL.");
+//                 // You can display an error message or take other action if needed.
+//             }
+//         };
+//     </script>
+// </body>
+// </html>
+
+
+// ************************    -->
+
             }
         };
     </script>
