@@ -11,7 +11,7 @@
         <label for="redirectUrl">Redirect URL:</label>
         <input type="text" id="redirectUrl" readonly>
     </div>
-    <button id="redirectButton">Redirect</button>
+    <button id="redirectButton">Show Redirect URL</button>
 
     <script>
         document.getElementById('redirectButton').onclick = function() {
@@ -21,8 +21,11 @@
                 console.log("Redirect URI: " + redirectUri);
                 // Display the redirect URL on the screen
                 document.getElementById('redirectUrl').value = redirectUri;
-                // Redirect the user
-                // window.location.href = redirectUri; // Uncomment this line to enable automatic redirection
+                // Ask the user for confirmation before redirecting
+                var shouldRedirect = confirm("Do you want to proceed with the redirection?");
+                if (shouldRedirect) {
+                    window.location.href = redirectUri;
+                }
             } else {
                 console.error("TPURLC parameter not found in URL.");
                 // You can display an error message or take other action if needed.
@@ -31,4 +34,3 @@
     </script>
 </body>
 </html>
-
