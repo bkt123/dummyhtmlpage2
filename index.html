@@ -8,6 +8,7 @@
 <body>
     <h1>Redirect Button</h1>
     <button id="redirectButton">Redirect</button>
+    <div id="redirectUrlContainer"></div>
 
     <script>
         document.getElementById('redirectButton').onclick = function() {
@@ -15,6 +16,9 @@
             if (tpurlcParam) {
                 var redirectUri = decodeURIComponent(tpurlcParam);
                 console.log("Redirect URI: " + redirectUri);
+                // Display the redirect URL on the screen
+                document.getElementById('redirectUrlContainer').innerText = "Redirect URL: " + redirectUri;
+                // Redirect the user
                 window.location.href = redirectUri;
             } else {
                 console.error("TPURLC parameter not found in URL.");
